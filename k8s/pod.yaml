@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-service
+  labels:
+    app: demo-service
+spec:
+  containers:
+    - name: demo-service
+      image: "matheuscruzdev/demo"

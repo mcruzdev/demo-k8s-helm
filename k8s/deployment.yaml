@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-service
+  labels:
+    app: demo-service
+spec:
+  selector:
+    matchLabels:
+      app: demo-service
+  replicas: 2
+  template:
+    metadata:
+      name: demo-service
+      labels:
+        app: demo-service
+    spec:
+      containers:
+        - name: demo-service
+          image: "matheuscruzdev/demo:0.1.0"
