@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo
+  labels:
+    release: demo
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  endpoints:
+  - port: web
+    path: /actuator/prometheus
+    targetPort: 8080

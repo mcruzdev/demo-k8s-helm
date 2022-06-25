@@ -1,4 +1,9 @@
 appName: demo-service
 image:
   repository: matheuscruzdev/demo
-  tag: 0.1.0
+  tag: 0.2.2
+
+
+serviceMonitorSelector:
+  matchLabels:
+    app: demo

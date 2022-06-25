@@ -9,7 +9,17 @@ Tools:
 ### Creating image
 
 ```bash
-    docker build -t demo .
+    mvn package
+```
+
+```bash
+    docker build -t matheuscruzdev/demo:0.2.0 .
+```
+
+### Publishing docker image
+
+```
+    docker push matheuscruzdev/demo:0.2.0
 ```
 
 ### Creating cluster K8S
@@ -31,3 +41,21 @@ Tools:
 ```
 
 [Testing here...](http://localhost:8080/apps?name=java) 
+
+### Packagin helm package
+
+```bash
+    helm package ./helm
+```
+
+### Installing helm package
+
+```bash
+    helm install demo ./helm/demo-service-0.1.0.tgz
+```
+
+### Accessing demo-service-svc
+
+```bash
+    kubectl port-forward svc/demo-service-svc 8080
+```

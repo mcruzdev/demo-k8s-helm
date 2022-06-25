@@ -18,3 +18,9 @@ spec:
       containers:
         - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+          - name: PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Values.appName }}-env
+                key: PREFIX

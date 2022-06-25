@@ -18,3 +18,9 @@ spec:
       containers:
         - name: demo-service
           image: "matheuscruzdev/demo:0.1.0"
+          env:
+            - name: PREFIX
+              valueFrom:
+                configMapKeyRef:
+                  name: demo-service-env
+                  key: PREFIX
