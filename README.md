@@ -13,49 +13,34 @@ Tools:
 ```
 
 ```bash
-    docker build -t matheuscruzdev/demo:0.2.0 .
+    docker build -t matheuscruzdev/demo:latest .
 ```
 
 ### Publishing docker image
 
 ```
-    docker push matheuscruzdev/demo:0.2.0
+    docker push matheuscruzdev/latest
 ```
 
-### Creating cluster K8S
+## Helm
 
-```bash
-    kind create cluster --config=k8s/kind.yaml --name=demo
-```
-
-### Creating POD
-
-```bash
-    kubectl apply -f k8s/pod.yaml
-```
-
-### Accessing demo-service
-
-```bash
-    kubectl port-forward pod/demo-service 8080:8080
-```
-
-[Testing here...](http://localhost:8080/apps?name=java) 
-
-### Packagin helm package
+### Packaging
 
 ```bash
     helm package ./helm
 ```
 
-### Installing helm package
+### Installing
 
 ```bash
     helm install demo ./helm/demo-service-0.1.0.tgz
 ```
 
-### Accessing demo-service-svc
+### Accessing demo-service
 
 ```bash
-    kubectl port-forward svc/demo-service-svc 8080
+    kubectl port-forward svc/demo-service 8080:8080
 ```
+
+[Testing here...](http://localhost:8080/apps?name=java) 
+
