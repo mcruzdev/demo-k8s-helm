@@ -8,7 +8,11 @@ spec:
   selector:
     matchLabels:
       app: demo
+  namespaceSelector:
+    matchNames:
+    - default
   endpoints:
-  - port: web
+  - port: {{ .Values.appName }}
     path: /actuator/prometheus
-    targetPort: 8080
+    
+

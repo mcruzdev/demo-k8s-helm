@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.appName }}
   labels: 
     app: demo
+    app.kubernetes.io/name: kube-prometheus
 spec:
   selector:
     app: {{ .Values.appName }}
@@ -13,3 +14,4 @@ spec:
       port: 8080
       targetPort: 8080
       protocol: TCP
+  serviceAccountName: 

@@ -4,7 +4,3 @@ version: 0.1.0
 type: application
 maintainers:
   - name: mcruzdev
-dependencies:
-  - name: kube-prometheus-stack
-    version: 36.2.0
-    repository: https://prometheus-community.github.io/helm-charts
